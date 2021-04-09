@@ -1,15 +1,16 @@
-## https://app.codility.com/demo/results/trainingZEJSAF-RTQ/
+## https://app.codility.com/demo/results/trainingPSFN8V-VMJ/
 
 def solution(N):
     # write your code in Python 3.6
-    factor = 0
-    sqrt_N = int(N**0.5)
-
-    for i in range(1, sqrt_N+1):
+    i = 1
+    result = 0
+    
+    while i**2<N:
         if N%i==0:
-            factor += 2
+            result += 2
+        i += 1
 
-    if sqrt_N**2==N:
-        factor -= 1
-
-    return factor
+    if i**2==N:
+        result += 1
+    
+    return result
