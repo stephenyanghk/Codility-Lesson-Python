@@ -1,4 +1,4 @@
-## https://app.codility.com/demo/results/trainingBY3EV5-A5V/
+## https://app.codility.com/demo/results/trainingT9NWZE-EYE/
 
 def solution(A):
     # write your code in Python 3.6
@@ -23,10 +23,10 @@ def solution(A):
             a_count += 1
             b_count -= 1
 
-        leader_a = True if a_count > (i+1)/2 else False
-        leader_b = True if b_count > (len(A)-i-1)/2 else False
+        leader_a = a_count > (i+1)/2 
+        leader_b = b_count > (len(A)-i-1)/2
 
-        if leader_a is True and leader_b is True:
+        if leader_a and leader_b:
             equi_leader += 1
 
     return equi_leader
