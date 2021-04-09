@@ -1,18 +1,18 @@
-## https://app.codility.com/demo/results/trainingHTA9WY-DMJ/
+## https://app.codility.com/demo/results/training2UNWSF-7XF/
 
 def solution(A):
     # write your code in Python 3.6
     max_profit = 0
-    st = []
+    last_min = None
     
     for i in A:
-        while len(st)>0 and st[-1]>i:
-            st.pop()
+        if last_min is not None and last_min>i:
+            last_min = None
 
-        if len(st)>0 and st[-1]<i:
-            max_profit = max(max_profit, i-st[-1])
+        if last_min is not None and last_min<i:
+            max_profit = max(max_profit, i-last_min)
 
-        if len(st)==0:
-            st.append(i)
+        if last_min is None:
+            last_min = i
 
     return max_profit
