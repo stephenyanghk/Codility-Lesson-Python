@@ -1,6 +1,5 @@
-## https://app.codility.com/demo/results/training85WVQX-W6H/
+## https://app.codility.com/demo/results/trainingSX2CYB-XUH/
 
 def solution(A, B, K):
     # write your code in Python 3.6
-    result = int(B/K) - int(A/K)
-    return result if A%K!=0 else result+1
+    return B//K - (A-1)//K
