@@ -8,7 +8,7 @@ def solution(A):
     buyat, sellat = A[0], A[0]
     max_profit = 0
     
-    for p in A:
+    for p in A[1:]:
         if p<buyat:
             buyat, sellat = p, p
         elif p>sellat:
