@@ -1,20 +1,19 @@
-## https://app.codility.com/demo/results/training369SPH-4ZS/
+## https://app.codility.com/demo/results/trainingSE6TKZ-B6U/
 
 def solution(N, A):
     # write your code in Python 3.6
-    result = [0]*N
+    l = [0]*N
 
-    this_min = 0
-    this_max = 0
+    curr_min = 0
+    curr_max = 0
 
     for i in A:
-        if i<=N:
-            id = i-1
-            if result[id]<this_min:
-                result[id] = this_min
-            result[id] += 1
-            this_max = max(this_max, result[id])
-        elif i==N+1:
-            this_min = this_max
+        if i==N+1:
+            curr_min = curr_max
+        else:
+            idx = i-1
+            l[idx] = max(l[idx], curr_min)
+            l[idx] += 1
+            curr_max = max(curr_max, l[idx])
 
-    return list(map(lambda x: this_min if x<this_min else x, result))
+    return [max(curr_min, i) for i in l]
